@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 const Navbar = ({ navigationData, currentRoute, setCurrentRoute }) => {
   return (
-    <nav className='hidden md:flex m-2 bg-white shadow-md'>
+    <nav className='hidden md:flex m-3 mb-30 bg-white shadow-md'>
       <div className='pl-4 pr-10'>
         <a href='#' className='flex items-center'>
           <img

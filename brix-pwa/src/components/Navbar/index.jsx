@@ -1,8 +1,6 @@
 import React from "react";
-import { CgMonday } from "react-icons/cg";
 import classNames from "classnames";
 
-// import styles from "./Navbar.module.css";
 
 const Navbar = ({ navigationData, currentRoute, setCurrentRoute }) => {
   return (

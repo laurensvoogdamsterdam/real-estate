@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "brix-pwa/build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

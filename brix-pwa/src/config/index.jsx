@@ -1,4 +1,4 @@
 const config = {
-    nav: ["HOME", "DISCOVER", "STORE", "INBOX", "PROFILE"],
+    nav: ["home", "discover", "store", "inbox", "profile"],
 };
 export default config;

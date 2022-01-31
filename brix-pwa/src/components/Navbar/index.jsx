@@ -1,6 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 
+import { Link } from "react-router-dom";
 
 const Navbar = ({ navigationData, currentRoute, setCurrentRoute }) => {
   return (
@@ -17,17 +18,18 @@ const Navbar = ({ navigationData, currentRoute, setCurrentRoute }) => {
       </div>
       <div className='flex-1 flex flex-row justify-start pl-50 '>
         {navigationData.map((item, index) => (
-          <a
-            href='/#'
+          <Link
             className={classNames([
-              "w-22 text-gray-500 text-xl hover:text-red-400 hover:border-red-400 hover:border-b-4 font-semibold cursor-pointer font-large tracking-wide text-sm flex items-start justify-center py-2 px-4 pb-5" ,
+              "w-22 text-gray-500 text-xl hover:text-red-400 hover:border-red-400 hover:border-b-4 font-semibold cursor-pointer font-large tracking-wide text-sm flex items-start justify-center py-2 px-4 pb-5",
               currentRoute === item &&
                 "text-gray-700 border-b-3 border-gray-700 bg-gradient-to-b from-white to-gray-100 border-red-400 border-b-4 ",
             ])}
             key={index}
-            onClick={() => setCurrentRoute(item)}>
+            onClick={() => setCurrentRoute(item)}
+            to={item}
+          >            
             {item}
-          </a>
+          </Link>
         ))}
       </div>
       <div className='my-auto'>

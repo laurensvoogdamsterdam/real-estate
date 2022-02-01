@@ -14,7 +14,7 @@ const Cards = ({
 
         <div className="bg-white">
           <div>
-            <img src={Photo} className="w-full" />
+            <img src={Photo} className="w-full" alt="near" />
           </div>
 
           <div className="p-2.5">

@@ -1,23 +1,25 @@
 import React, { useCallback } from "react";
 import classNames from "classnames";
-import { AiFillHome, AiFillCompass } from "react-icons/ai";
-import { BsFillBagFill, BsFillPersonFill } from "react-icons/bs";
-import { CgInbox } from "react-icons/cg";
 import { Link } from 'react-router-dom'
+import DynamicFeedIcon from '@mui/icons-material/DynamicFeed';
+import LabelImportantIcon from '@mui/icons-material/LabelImportant';
+import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
+import SendIcon from '@mui/icons-material/Send';
+import AddBoxIcon from '@mui/icons-material/AddBox';
 
 const Tabbar = ({ navigationData, currentRoute, setCurrentRoute }) => {
   const getTabIcon = useCallback((item) => {
     switch (item.toLowerCase()) {
       case "home":
-        return <AiFillHome />;
+        return <DynamicFeedIcon />;
       case "discover":
-        return <AiFillCompass />;
+        return <LabelImportantIcon />;
       case "store":
-        return <BsFillBagFill />;
+        return <AddBoxIcon />;
       case "inbox":
-        return <CgInbox />;
+        return <SendIcon />;
       case "profile":
-            return <BsFillPersonFill />;
+            return <InsertEmoticonIcon />;
       default:
             return null;
     }

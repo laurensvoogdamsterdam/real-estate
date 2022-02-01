@@ -12,6 +12,8 @@ import Store from './screens/Store'
 import Inbox from './screens/Inbox'
 import Profile from './screens/Profile'
 import Discover from './screens/Discover'
+import useFirebase from './hooks/useFirebase';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 export default function App() {
   const { currentRoute, setCurrentRoute } = useNavigation();
@@ -19,7 +21,8 @@ export default function App() {
   // const [isLoading, setIsLoading] = useState(true);
   // const [term, setTerm] = useState("");
   
-
+  const { auth } = useFirebase();
+  const { user } = useAuthState(auth);
   // useEffect(() => {
   //   fetch(
   //     `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}&q=${term}&image_type=photo&pretty=true`
@@ -39,12 +42,13 @@ export default function App() {
         navigationData={config.nav}
         currentRoute={currentRoute}
         setCurrentRoute={setCurrentRoute}
-      />
-      <Tabbar
-        navigationData={config.nav}
-        currentRoute={currentRoute}
-        setCurrentRoute={setCurrentRoute}
         />
+        {user ?
+          <Tabbar
+            navigationData={config.nav}
+            currentRoute={currentRoute}
+            setCurrentRoute={setCurrentRoute}
+          /> : null}
         
         
 

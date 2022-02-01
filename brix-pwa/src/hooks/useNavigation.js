@@ -2,7 +2,7 @@
 import { useState, useCallback } from "react";
 
 const useNavigation = () => {
-  const [route, setRoute] = useState("Home");
+  const [route, setRoute] = useState("home");
 
   const selectAction = useCallback(
     (option) => {

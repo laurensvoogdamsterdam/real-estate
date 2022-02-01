@@ -3,9 +3,10 @@ import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import GoogleIcon from '@mui/icons-material/Google';
 import FacebookIcon from '@mui/icons-material/Facebook';
+import useFirebase from '../../hooks/useFirebase';
 
 export default function SignInModal({open, setOpen, goToSignUp}) {
-
+  const { signinWithGoogle } = useFirebase();
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="fixed z-10 inset-0 overflow-y-auto" onClose={setOpen}>
@@ -61,7 +62,7 @@ export default function SignInModal({open, setOpen, goToSignUp}) {
                   <button onClick={() => setOpen(false)} className="mt-4 mx-auto whitespace-nowrap inline-flex w-full items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-800 hover:bg-red-700">
                     Sign in
                   </button>
-                  <button className="mt-4 mx-auto whitespace-nowrap inline-flex w-full items-center justify-center px-4 py-2 border border-transparent rounded-md text-base font-medium text-red-900 ">
+                  <button onClick={() => signinWithGoogle()} className="mt-4 mx-auto whitespace-nowrap inline-flex w-full items-center justify-center px-4 py-2 border border-transparent rounded-md text-base font-medium text-red-900 ">
                     <GoogleIcon size={16} className="mr-2" />Sign in with Google
                   </button>
                   <button className="mt-4 mx-auto whitespace-nowrap inline-flex w-full items-center justify-center px-4 py-2 border border-transparent rounded-md text-base font-medium text-red-800">

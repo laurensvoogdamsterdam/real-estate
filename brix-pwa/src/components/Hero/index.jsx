@@ -1,12 +1,26 @@
 
-import Modal from '../../components/Modal';
+import SignUpModal from '../../components/SignUpModal';
+import SignInModal from '../../components/SignInModal';
 import  { useState } from 'react';
 
 export default function Hero() {
-  const [open, setOpen] = useState(false);
+  const [signInOpen, setSignInOpen] = useState(false);
+  const [signUpOpen, setSignUpOpen] = useState(false);
+
+  const goToSignIn = () => {
+    setSignUpOpen(false)
+    setSignInOpen(true)
+  }
+
+  const goToSignUp = () => {
+    setSignInOpen(false)
+    setSignUpOpen(true)
+  }
+
     return (
       <div class="bg-gray-50">
-        <Modal open={open} setOpen={setOpen} />
+        <SignInModal open={signInOpen} setOpen={setSignInOpen} goToSignUp={goToSignUp}/>
+        <SignUpModal open={signUpOpen} setOpen={setSignUpOpen} goToSignIn={goToSignIn}/>
         <div class="relative overflow-hidden">
           
       
@@ -25,10 +39,10 @@ export default function Hero() {
                   Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.
                 </p>
                 <div class="block sm:hidden items-center justify-center mt-4">
-                  <button onClick={()=>setOpen(true)} class="whitespace-nowrap text-base font-medium text-gray-800 hover:text-red-800">
+                  <button onClick={()=>setSignInOpen(true)} class="whitespace-nowrap text-base font-medium text-gray-800 hover:text-red-800">
                     Sign in
                   </button>
-                  <button href="/" class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-800 hover:bg-red-700">
+                  <button onClick={()=>setSignUpOpen(true)}class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-800 hover:bg-red-700">
                     Sign up
                   </button>
                 </div>

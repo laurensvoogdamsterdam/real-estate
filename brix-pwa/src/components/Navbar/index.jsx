@@ -1,11 +1,30 @@
 import React from "react";
 import classNames from "classnames";
 
+import SignUpModal from '../../components/SignUpModal';
+import SignInModal from '../../components/SignInModal';
+import  { useState } from 'react';
+
 import { Link } from "react-router-dom";
 
 const Navbar = ({ navigationData, currentRoute, setCurrentRoute }) => {
+  const [signInOpen, setSignInOpen] = useState(false);
+  const [signUpOpen, setSignUpOpen] = useState(false);
+
+  const goToSignIn = () => {
+    setSignUpOpen(false)
+    setSignInOpen(true)
+  }
+
+  const goToSignUp = () => {
+    setSignInOpen(false)
+    setSignUpOpen(true)
+  }
   return (
     <nav class="hidden max-w-9xl mx-auto px-4 bg-gray-50 sm:flex ">
+      <SignInModal open={signInOpen} setOpen={setSignInOpen} goToSignUp={goToSignUp}/>
+      <SignUpModal open={signUpOpen} setOpen={setSignUpOpen} goToSignIn={goToSignIn} />
+      
       <div className='pl-4 pr-10'>
         <a href='/#' className='flex items-center'>          
           <h1 class="text-3xl font-extrabold sm:text-5xl md:text-6xl">
@@ -30,10 +49,10 @@ const Navbar = ({ navigationData, currentRoute, setCurrentRoute }) => {
         ))}
       </div>
       <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-          <button class="whitespace-nowrap text-base font-medium text-gray-800 hover:text-red-800">
+        <button onClick={() => setSignInOpen(true)} class="whitespace-nowrap text-base font-medium text-gray-800 hover:text-red-800">
             Sign in
           </button>
-          <button  class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-800 hover:bg-red-700">
+        <button onClick={() => setSignUpOpen(true)}  class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-800 hover:bg-red-700">
             Sign up
           </button>        
           <div className="ml-5">

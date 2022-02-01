@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -7,7 +7,6 @@ import useNavigation from "./hooks/useNavigation";
 import config from "./config";
 import Navbar from "./components/Navbar";
 import Tabbar from "./components/Tabbar";
-// import MainJumbo from "./components/MainJumbo";
 import Home from './screens/Home';
 import Store from './screens/Store'
 import Inbox from './screens/Inbox'

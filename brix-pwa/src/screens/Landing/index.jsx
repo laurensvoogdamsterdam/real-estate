@@ -14,6 +14,7 @@ const Landing = ({
           className="
             relative flex items-center justify-center h-full
             bg-cover bg-center bg-fixed bg-no-repeat
+            rounded-xl
           "
           style={{
             backgroundImage: `url(${Hero})`

@@ -5,38 +5,46 @@ import { Link } from "react-router-dom";
 
 const Navbar = ({ navigationData, currentRoute, setCurrentRoute }) => {
   return (
-    <nav className='hidden md:flex m-3  bg-white shadow-md'>
+    <nav class="hidden max-w-9xl mx-auto px-4 bg-gray-50 sm:flex ">
       <div className='pl-4 pr-10'>
-        <a href='/#' className='flex items-center'>
-          <img
-            className='w-10 h-10'
-            src='https://cdn3.iconfinder.com/data/icons/random-4/96/brick-bricks-build-building-contruction-wall-512.png'
-            alt='Brix'
-          />
-          <span className='font-semibold text-gray-500 text-2xl'> Brix </span>
+        <a href='/#' className='flex items-center'>          
+          <h1 class="text-3xl font-extrabold sm:text-5xl md:text-6xl">
+                <span class="block text-red-800">Brix </span>
+          </h1>
         </a>
       </div>
-      <div className='flex-1 flex flex-row justify-start pl-50 '>
+      <div className='flex-1 flex flex-row justify-center pl-50 '>
         {navigationData.map((item, index) => (
           <Link
             className={classNames([
-              "w-22 text-gray-500 text-xl hover:text-red-400 hover:border-red-400 hover:border-b-4 font-semibold cursor-pointer font-large tracking-wide text-sm flex items-start justify-center py-2 px-4 pb-5",
+              "w-22 text-gray-800 text-xl hover:text-red-800 hover:border-red-800 hover:border-b-4 font-semibold cursor-pointer font-large tracking-wide text-sm flex items-start justify-center py-4 px-4 pb-5",
               currentRoute === item &&
-                "text-gray-700 border-b-3 border-gray-700 bg-gradient-to-b from-white to-gray-100 border-red-400 border-b-4 ",
+                "text-gray-800 border-b-3 border-gray-800 border-red-800 border-b-4 ",
             ])}
             key={index}
             onClick={() => setCurrentRoute(item)}
             to={item}
-          >            
+          >
             {item}
           </Link>
         ))}
       </div>
-      <div className='my-auto'>
-        <button className='bg-white hover:bg-gray-50 border-2 border-gray-900 text-sm text-gray-900 py-2 px-3 rounded-lg font-medium tracking-wide leading-none'>
-          Logout
-        </button>
-      </div>
+      <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+          <a href="/" class="whitespace-nowrap text-base font-medium text-gray-800 hover:text-red-800">
+            Sign in
+          </a>
+          <a href="/" class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-800 hover:bg-red-700">
+            Sign up
+          </a>
+        </div>
+        <div class="ml-3 relative">
+          <div>
+            <button type="button" class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white mt-3" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+              <span class="sr-only">Open user menu</span>
+              <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
+            </button>
+          </div>                
+      </div>      
     </nav>
   );
 };

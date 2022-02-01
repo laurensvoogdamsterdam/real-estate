@@ -37,23 +37,23 @@ export default function SignInModal({open, setOpen, goToSignUp}) {
             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
             <div className="inline-block align-bottom bg-white rounded-lg px-4 pt-2 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6">
-            <div class="max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
-                <div class="bg-white rounded shadow-md text-black w-full">
-                  <h1 class="text-3xl mt-10 font-extrabold sm:text-5xl md:text-6xl text-center">
-                      <span class="block text-red-800">Sign in </span>
+            <div className="max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+                <div className="bg-white rounded shadow-md text-black w-full">
+                  <h1 className="text-3xl mt-10 font-extrabold sm:text-5xl md:text-6xl text-center">
+                      <span className="block text-red-800">Sign in </span>
                   </h1>     
-                  <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+                  <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
                     Let's find you a sweet home!
                   </p>  
                     <input 
                         type="text"
-                        class="block mt-4 border border-grey-light w-full p-3 rounded mb-4"
+                        className="block mt-4 border border-grey-light w-full p-3 rounded mb-4"
                         name="email"
                         placeholder="Email" />
 
                     <input 
                         type="password"
-                        class="block border border-grey-light w-full p-3 rounded mb-4"
+                        className="block border border-grey-light w-full p-3 rounded mb-4"
                         name="password"
                         placeholder="Password" />
                   
@@ -70,9 +70,9 @@ export default function SignInModal({open, setOpen, goToSignUp}) {
                   </button>
                 </div>
 
-                <div class="text-grey-dark mt-6">
+                <div className="text-grey-dark mt-6">
                     Don't have an account? 
-                  <button onClick={() => goToSignUp()} class="ml-1 underline text-blue-600 hover:text-blue-800 visited:text-purple-600" >
+                  <button onClick={() => goToSignUp()} className="ml-1 underline text-blue-600 hover:text-blue-800 visited:text-purple-600" >
                         Sign up
                     </button>.
                 </div>

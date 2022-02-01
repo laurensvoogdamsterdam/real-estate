@@ -48,7 +48,7 @@ export default function App() {
         
         
 
-      <main className='h-full px-10'>        
+      <main>        
         <Routes>
             <Route path="/home" element={<Home />} />            
             <Route path="/store" element={<Store/>}/>            

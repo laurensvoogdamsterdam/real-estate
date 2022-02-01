@@ -43,7 +43,7 @@ const Cards = ({
 
         <div className="bg-white">
           <div>
-            <img src={Photo} className="w-full" />
+            <img src={Photo} className="w-full" alt="new" />
           </div>
 
           <div className="p-2.5">
@@ -72,7 +72,7 @@ const Cards = ({
 
         <div className="bg-white">
           <div>
-            <img src={Photo} className="w-full" />
+            <img src={Photo} className="w-full" alt="favorites" />
           </div>
 
           <div className="p-2.5">

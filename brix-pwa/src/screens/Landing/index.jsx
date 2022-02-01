@@ -44,7 +44,6 @@ const Landing = ({
       </div>
 
 
-      {/* <Footer /> */}
 
     </div>
   );

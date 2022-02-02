@@ -25,7 +25,7 @@ export default function Navbar({ user, nav, currentRoute, setCurrentRoute }) {
   };
 
   return (
-    <nav className='hidden max-w-9xl mx-auto px-4 bg-gray-50 sm:flex '>
+    <nav className='shadow-sm sticky top-0 z-10 hidden max-w-9xl mx-auto px-4 bg-gray-50 sm:flex '>
       <SignInModal
         open={signInOpen}
         setOpen={setSignInOpen}

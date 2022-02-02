@@ -1,16 +1,11 @@
 import * as React from "react";
-import { useLocation, Navigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import useFirebase from "../../hooks/useFirebase";
+import Welcome from "../Welcome";
 
-export default function Protected({ children }: { children: JSX.Element }) {
+export default function Protected({ children }) {
   const { auth } = useFirebase();
   const [user] = useAuthState(auth);
-  const location = useLocation();
 
-  if (!user) {
-    return <Navigate to='/signin' state={{ from: location }} replace />;
-  }
-
-  return children;
+  return user ? children : <Welcome />;
 }

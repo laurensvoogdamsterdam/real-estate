@@ -4,7 +4,6 @@ import useNavigation from "./hooks/useNavigation";
 import config from "./config";
 import Navbar from "./components/Navbar";
 import Tabbar from "./components/Tabbar";
-import Welcome from "./screens/Welcome";
 import Home from "./screens/Home";
 import Store from "./screens/Store";
 import Profile from "./screens/Profile";
@@ -37,8 +36,9 @@ export default function App() {
           />
 
           <main>
-            <Routes default='/home'>
+            <Routes>
               <Route
+                exact
                 path='/home'
                 element={
                   <Protected>
@@ -47,6 +47,7 @@ export default function App() {
                 }
               />
               <Route
+                exact
                 path='/store'
                 element={
                   <Protected>
@@ -55,6 +56,7 @@ export default function App() {
                 }
               />
               <Route
+                exact
                 path='/profile'
                 element={
                   <Protected>
@@ -63,6 +65,7 @@ export default function App() {
                 }
               />
               <Route
+                exact
                 path='/discover'
                 element={
                   <Protected>
@@ -71,6 +74,7 @@ export default function App() {
                 }
               />
               <Route
+                exact
                 path='/inbox'
                 element={
                   <Protected>
@@ -78,8 +82,14 @@ export default function App() {
                   </Protected>
                 }
               />
-              <Route path='/' element={<Welcome />} />
-              <Route path='/signin' element={<Welcome />} />
+              <Route
+                path='/*'
+                element={
+                  <Protected>
+                    <Home />
+                  </Protected>
+                }
+              />
             </Routes>
           </main>
         </div>

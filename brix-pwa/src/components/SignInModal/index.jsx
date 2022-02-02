@@ -8,6 +8,7 @@ import {
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
 
 export default function SignInModal({ open, setOpen, goToSignUp }) {
   const { auth } = useFirebase();
@@ -16,17 +17,23 @@ export default function SignInModal({ open, setOpen, goToSignUp }) {
   const [signInWithEmailAndPassword, error] =
     useSignInWithEmailAndPassword(auth);
   const [signInWithGoogle] = useSignInWithGoogle(auth);
+  let navigate = useNavigate();
 
-  const handleSignIn = async () => {
-    const response = await signInWithEmailAndPassword(email, password);
-    console.log(response);
-    if (!error) setOpen(false);
+  const handleSignIn = () => {
+    const response = signInWithEmailAndPassword(email, password);
+    if (response) {
+      setOpen(false);
+      navigate("/home", { replace: true });
+    }
   };
 
-  const handleSignInWithGoogle = async () => {
-    const response = await signInWithGoogle();
-    console.log(response);
-    if (!error) setOpen(false);
+  const handleSignInWithGoogle = () => {
+    signInWithGoogle()
+      .then((response) => {
+        setOpen(false);
+        navigate("/home", { replace: false });
+      })
+      .catch((e) => console.log(e));
   };
 
   return (

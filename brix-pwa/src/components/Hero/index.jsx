@@ -81,7 +81,7 @@ export default function Hero() {
           </div>
           <div className='max-w-6xl mx-auto sm:px-6'>
             <img
-              className='relative mx-auto rounded-xl shadow-xl'
+              className='relative mx-auto rounded-full shadow-xl'
               src='https://i.pinimg.com/originals/0e/82/32/0e82328f0ce045ffe96eb75b2170257f.jpg'
               alt='App screenshot'
             />

@@ -25,7 +25,7 @@ const features = [
 
 export default function HeroBody() {
   return (
-    <div className='bg-gray-800'>
+    <div className='bg-gray-800 z-10'>
       <div className='py-8 max-w-7xl mx-auto divide-y divide-white flex justify-center lg:divide-y-0 lg:divide-x p-100'>
         <h1 className='text-4xl tracking-tight font-extrabold text-gray-800 sm:text-5xl md:text-6xl '>
           <span className='block text-white '>You'll find</span>

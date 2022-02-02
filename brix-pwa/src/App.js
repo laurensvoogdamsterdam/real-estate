@@ -19,9 +19,9 @@ export default function App() {
   const [user, loading] = useAuthState(auth);
 
   return (
-    <LoadingOverlay active={loading} spinner text={"Loading"}>
+    <LoadingOverlay active={loading} spinner>
       <Router>
-        <div className='bg-gray-200 h-screen'>
+        <div className='bg-gray-200 '>
           <Navbar
             user={user}
             nav={config.nav}

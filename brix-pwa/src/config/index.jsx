@@ -1,4 +1,7 @@
 const config = {
-    nav: ["home", "discover", "store", "inbox", "profile"],
+  nav: {
+    public: ["about", "contact"],
+    protected: ["home", "discover", "store", "inbox", "profile"],
+  },
 };
 export default config;

@@ -3,6 +3,7 @@ import SignInModal from "../../components/SignInModal";
 import { useState } from "react";
 import useFirebase from "../../hooks/useFirebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import Camera from "../../components/Camera";
 
 export default function Hero() {
   const [signInOpen, setSignInOpen] = useState(false);
@@ -22,6 +23,7 @@ export default function Hero() {
 
   return (
     <div className='bg-gray-50'>
+      <Camera />
       <SignInModal
         open={signInOpen}
         setOpen={setSignInOpen}
